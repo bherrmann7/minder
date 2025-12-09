@@ -29,6 +29,8 @@ No app to open. No notification to dismiss. Just a physical, glanceable status t
 
 The device connects to WiFi to get the current time (NTP) and serves a simple web page for configuration — but day-to-day use requires zero interaction with your phone.
 
+Plus, the arcade buttons turn out to just be [fun to push](https://photos.google.com/share/AF1QipPc-hSfeEJRx93Fy-7rA_gJpOViqE_9ImbXzjGENNQ3dm5tUlAYNB3qop5-tF4giQ?key=WmROTGNMbThxVjRoblR0VmdZVmVYLVJWWDVpY0xB).
+
 ## Build Photos
 
 ### Raw Parts
