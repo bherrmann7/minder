@@ -1,0 +1,141 @@
+================================================================================
+                    PILL REMINDER - WIRING DIAGRAM
+================================================================================
+
+POWER SECTION (AC Mains → 5V DC)
+--------------------------------
+
+    AC HOT (Black/Brown) ──────┐
+                               │
+                         ┌─────┴─────┐
+                         │  Hi-Link  │
+                         │ HLK-PM01  │
+                         │           │
+                         │ AC    +Vo ├──────► 5V Rail
+                         │ AC    -Vo ├──────► GND Rail
+                         └─────┬─────┘
+                               │
+    AC NEUTRAL (White/Blue) ───┘
+
+
+⚠️  WARNING: AC MAINS IS DANGEROUS!
+    - Use proper strain relief on AC wires
+    - Ensure enclosure is fully insulated
+    - Double-check polarity before powering
+    - The Hi-Link module is isolated but still be careful
+
+
+ESP8266 WEMOS D1 MINI CONNECTIONS
+---------------------------------
+
+                        ┌───────────────┐
+                        │  Wemos D1 Mini│
+                        │               │
+       5V Rail ────────►│ 5V        3V3 │
+       GND Rail ───────►│ GND       GND │
+                        │               │
+       AM Button SW ───►│ D1 (GPIO5)    │
+       PM Button SW ───►│ D2 (GPIO4)    │
+                        │               │
+       AM Button LED ──►│ D5 (GPIO14)   │
+       PM Button LED ──►│ D6 (GPIO12)   │
+                        │               │
+                        └───────────────┘
+
+
+ARCADE BUTTON WIRING (typical 5V illuminated button)
+----------------------------------------------------
+
+Each arcade button has 4 terminals:
+  - 2 for the microswitch (NO = Normally Open, COM = Common)
+  - 2 for the LED (+ and -)
+
+AM BUTTON:
+                    ┌─────────────────┐
+                    │   AM BUTTON     │
+                    │   ┌───────┐     │
+                    │   │  LED  │     │
+                    │   │  (+)──┼─────┼────► D5 (GPIO14)
+                    │   │  (-)──┼─────┼────► GND
+                    │   └───────┘     │
+                    │                 │
+                    │   SWITCH        │
+                    │   (NO)──────────┼────► D1 (GPIO5)
+                    │   (COM)─────────┼────► GND
+                    └─────────────────┘
+
+PM BUTTON:
+                    ┌─────────────────┐
+                    │   PM BUTTON     │
+                    │   ┌───────┐     │
+                    │   │  LED  │     │
+                    │   │  (+)──┼─────┼────► D6 (GPIO12)
+                    │   │  (-)──┼─────┼────► GND
+                    │   └───────┘     │
+                    │                 │
+                    │   SWITCH        │
+                    │   (NO)──────────┼────► D2 (GPIO4)
+                    │   (COM)─────────┼────► GND
+                    └─────────────────┘
+
+
+COMPLETE WIRING SUMMARY
+-----------------------
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│   AC MAINS                                                                  │
+│   ════════                                                                  │
+│       │                                                                     │
+│       ▼                                                                     │
+│   ┌────────┐         ┌──────────────┐                                       │
+│   │Hi-Link │         │ Wemos D1 Mini│                                       │
+│   │HLK-PM01│         │              │                                       │
+│   │        │   5V    │              │      ┌──────────┐    ┌──────────┐     │
+│   │   +Vo──┼────────►│ 5V      D5 ──┼─────►│ AM LED + │    │ PM LED + │◄────┤
+│   │   -Vo──┼──┬─────►│ GND     D6 ──┼─────►└────┬─────┘    └────┬─────┘     │
+│   └────────┘  │      │              │           │               │           │
+│               │      │         D1 ◄─┼───────────┼───(AM SW)─────┤           │
+│               │      │         D2 ◄─┼───────────┼───────────────┼─(PM SW)   │
+│               │      │              │           │               │           │
+│               │      └──────────────┘           │               │           │
+│               │                                 │               │           │
+│               └─────────────────────────────────┴───────────────┴───► GND   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+GPIO SUMMARY TABLE
+------------------
+
+    Pin         GPIO    Function            Notes
+    ───────────────────────────────────────────────────────────────
+    D1          GPIO5   AM Button Switch    INPUT, internal pullup
+    D2          GPIO4   PM Button Switch    INPUT, internal pullup
+    D5          GPIO14  AM Button LED       OUTPUT
+    D6          GPIO12  PM Button LED       OUTPUT
+    5V          -       Power in            From Hi-Link +Vo
+    GND         -       Ground              Common ground
+
+
+NOTES ON BUTTON ACCENT COLORS
+-----------------------------
+Suggestion: Use different colored buttons or LED colors
+  - AM: Yellow or White LED (morning sun)
+  - PM: Blue or Orange LED (evening)
+
+Or just use whatever you can get - function > form!
+
+
+PARTS LIST REMINDER
+-------------------
+□ 1x Wemos D1 Mini (ESP8266)
+□ 1x Hi-Link HLK-PM01 (AC-DC 5V 3W)
+□ 2x 24mm Illuminated Arcade Buttons (5V)
+□ Wire (22-24 AWG for low voltage, 18 AWG for AC)
+□ Project enclosure
+□ AC power cord or plug
+□ Heat shrink / electrical tape
+□ Optional: 100-200 ohm resistors if LEDs are too bright
+
+================================================================================
