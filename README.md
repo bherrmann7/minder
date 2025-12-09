@@ -1,5 +1,7 @@
 # Minder
 
+<img src="images/minderlit.jpg" width="300" alt="Minder with one button lit">
+
 A simple ESP8266-based device with two illuminated buttons (AM/PM) that light up at scheduled times to remind you to take your medication or feed your pet.
 
 ## Problem
