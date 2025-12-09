@@ -2,6 +2,27 @@
 
 A simple ESP8266-based device with two illuminated buttons (AM/PM) that light up at scheduled times to remind you to take your medication or feed your pet.
 
+## Problem
+
+"Did I take my pill this morning?" 
+
+Phone alarms don't work — you dismiss them and immediately forget. Pill organizers help, but you still find yourself staring at the Tuesday slot wondering if today is Tuesday or if you already took it.
+
+For pet feeding in multi-person households, it's even worse: "Did you feed the dog?" "I thought YOU fed the dog." Meanwhile the dog is acting starved regardless of the truth.
+
+## Solution
+
+A simple box with two glowing buttons that sits in your kitchen:
+
+- **AM button** lights up at your morning reminder time
+- **PM button** lights up at your evening reminder time
+- Press the button when you've done the thing — light goes off
+- Forgot? The light is still on, staring at you
+
+No app to open. No notification to dismiss. Just a physical, glanceable status that anyone in the household can see.
+
+The device connects to WiFi to get the current time (NTP) and serves a simple web page for configuration — but day-to-day use requires zero interaction with your phone.
+
 ## Build Photos
 
 ### Raw Parts
