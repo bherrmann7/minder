@@ -16,7 +16,7 @@ For pet feeding in multi-person households, it's even worse: "Did you feed the d
 
 **Right time, right place.**
 
-A simple box with two glowing buttons that sits in your kitchen:
+A simple box with two glowing buttons that sits in your kitchen (or near where the pooch is fed):
 
 - **AM button** lights up at your morning reminder time
 - **PM button** lights up at your evening reminder time
