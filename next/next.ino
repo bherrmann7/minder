@@ -1,5 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+#include <ESP8266mDNS.h>
 #include <WiFiManager.h>
 #include <LittleFS.h>
 #include <time.h>
@@ -138,7 +139,7 @@ void handleRoot() {
   for (int i = 0; i < 60; i += 5) {
     html += "<option value='" + String(i) + "'";
     if (i == amMinute) html += " selected";
-    html += ">" + (i < 10 ? "0" : "") + String(i) + "</option>";
+    html += String(">") + (i < 10 ? "0" : "") + String(i) + "</option>";
   }
   html += "</select>";
   html += "<select name='am_period'>";
@@ -165,7 +166,7 @@ void handleRoot() {
   for (int i = 0; i < 60; i += 5) {
     html += "<option value='" + String(i) + "'";
     if (i == pmMinute) html += " selected";
-    html += ">" + (i < 10 ? "0" : "") + String(i) + "</option>";
+    html += String(">") + (i < 10 ? "0" : "") + String(i) + "</option>";
   }
   html += "</select>";
   html += "<select name='pm_period'>";
@@ -295,6 +296,11 @@ void setup() {
   Serial.print("Connected! IP address: ");
   Serial.println(WiFi.localIP());
   
+  // Start mDNS
+  if (MDNS.begin("minder")) {
+    Serial.println("mDNS started: http://minder.local");
+  }
+  
   // Set up time
   configTime(timezoneOffset * 3600, 0, "pool.ntp.org");
   
@@ -315,6 +321,7 @@ void setup() {
 
 void loop() {
   server.handleClient();
+  MDNS.update();
   
   time_t now = time(nullptr);
   struct tm* t = localtime(&now);

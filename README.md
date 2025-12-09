@@ -114,7 +114,7 @@ In Arduino IDE, go to Sketch → Include Library → Manage Libraries:
 
 ## Configuration
 
-Once connected, open the device's IP address in a browser to:
+Once connected, open **http://minder.local** in a browser (or use the device's IP address) to:
 - See current status (time, AM/PM reminder state)
 - Set AM reminder time
 - Set PM reminder time  
@@ -143,6 +143,7 @@ The device will restart in setup mode.
 - Note: No automatic DST handling
 
 **Can't find device IP:**
+- Try **http://minder.local** (works on most devices)
 - Check your router's connected devices list
 - Or watch Serial Monitor during boot
 
