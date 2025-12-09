@@ -6,9 +6,11 @@ A simple ESP8266-based device with two illuminated buttons (AM/PM) that light up
 
 "Did I take my pill this morning?" 
 
-Phone alarms don't work — you dismiss them and immediately forget. Pill organizers help, but you still find yourself staring at the Tuesday slot wondering if today is Tuesday or if you already took it.
+Phone alarms don't work — you dismiss them and immediately forget. Worse, the reminder hits when you're in bed or on the couch, not in the kitchen where your pills actually are. By the time you get there, you've forgotten.
 
-For pet feeding in multi-person households, it's even worse: "Did you feed the dog?" "I thought YOU fed the dog." Meanwhile the dog is acting starved regardless of the truth.
+Pill organizers help, but you still find yourself staring at the Tuesday slot wondering if today is Tuesday or if you already took it.
+
+For pet feeding in multi-person households, it's even worse: "Did you feed the dog?" "I thought YOU fed the dog." Meanwhile the dog is acting starved regardless of the truth. And your phone doesn't know to remind you when you're standing by the dog bowl.
 
 ## Solution
 
