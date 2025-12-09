@@ -4,7 +4,7 @@ A simple ESP8266-based device with two illuminated buttons (AM/PM) that light up
 
 ## Problem
 
-"Did I take my pill this morning?" 
+"Did I take my pill this morning?" Or: "Did anyone feed Fido, or did three people feed Fido?"
 
 Phone alarms don't work — you dismiss them and immediately forget. Worse, the reminder hits when you're in bed or on the couch, not in the kitchen where your pills actually are. By the time you get there, you've forgotten.
 
