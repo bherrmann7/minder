@@ -98,7 +98,7 @@ In Arduino IDE, go to Sketch → Include Library → Manage Libraries:
 
 ### 4. Upload the Code
 
-- Open `next.ino` (the WiFiManager version) or `main.ino` (simpler version)
+- Open `minder/minder.ino`
 - Select Tools → Board → "LOLIN(WEMOS) D1 R2 & mini"
 - Select your serial port
 - Click Upload
