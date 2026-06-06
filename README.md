@@ -79,6 +79,10 @@ Wemos D1 Mini:
   D6     → PM button LED+ (LED- to GND)
 ```
 
+## Wiring Diagram
+
+![Wiring Diagram](images/wiring-diagram.svg)
+
 ## Software Setup
 
 ### 1. Install Arduino IDE
